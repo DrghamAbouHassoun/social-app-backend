@@ -8,6 +8,16 @@ import { RequestWithUser } from "src/types/auth";
 export class StaticFileController {
     constructor(private staticFileService: StaticFileService) {}
 
+    /**
+     * Handles file upload requests.
+     *
+     * @param file - The uploaded file.
+     * @param req - The request object containing user information.
+     *
+     * @returns A promise that resolves to the saved file information.
+     *
+     * @throws Will throw an error if the file upload fails.
+     */
     @UseGuards(AuthGuard)
     @Post("/upload")
     @UseInterceptors(FileInterceptor("file"))
@@ -20,6 +30,13 @@ export class StaticFileController {
         })
     }
 
+    /**
+     * Retrieves all files from the database.
+     *
+     * @returns A promise that resolves to an array of file information objects.
+     *
+     * @throws Will throw an error if the retrieval fails.
+     */
     @Get("/")
     async getAllFiles () {
         return await this.staticFileService.getAllFiles();
