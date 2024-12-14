@@ -5,7 +5,6 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { UserModule } from './modules/users/user.module';
 import { AuthModule } from './modules/auth/auth.module';
 import { ImageModule } from './modules/images/images.module';
-import { MulterModule } from '@nestjs/platform-express';
 import { CategoryModule } from './modules/categories/category.module';
 import { BooksModule } from './modules/books/books.module';
 import { AuthorModule } from './modules/authors/author.module';
@@ -13,6 +12,8 @@ import { PostModule } from './modules/posts/post.module';
 import { ServeStaticModule } from '@nestjs/serve-static';
 import { join } from 'path';
 import { StaticFilesModule } from './modules/staticfiles/staticfile.module';
+import { EmailModule } from './modules/email/email.module';
+import { QueueModule } from './modules/queues/queue.module';
 
 @Module({
   imports: [
@@ -28,6 +29,8 @@ import { StaticFilesModule } from './modules/staticfiles/staticfile.module';
     ImageModule,
     PostModule,
     StaticFilesModule,
+    EmailModule,
+    QueueModule,
   ],
   controllers: [AppController],
   providers: [AppService],

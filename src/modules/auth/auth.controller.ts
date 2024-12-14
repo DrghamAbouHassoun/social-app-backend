@@ -1,7 +1,7 @@
 import { StaticFileService } from './../staticfiles/staticfile.service';
 import { Controller, Body, Post, HttpCode, HttpStatus, Get, UseGuards, Req } from "@nestjs/common";
 import { AuthService } from "./auth.service";
-import { LoginCredentials, RequestWithUser } from "src/types/auth";
+import { RequestWithUser } from "src/types/auth";
 import { LoginValidator, RegisterValidator } from "src/validators/auth.validator";
 import { AuthGuard } from "src/guards/auth.guard";
 

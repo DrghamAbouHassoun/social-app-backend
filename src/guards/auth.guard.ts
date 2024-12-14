@@ -1,7 +1,5 @@
 import { CanActivate, ExecutionContext, HttpException, Injectable } from "@nestjs/common";
 import { JwtService } from "@nestjs/jwt";
-import { Request } from "express";
-import { Observable } from "rxjs";
 import globalConstants from "src/config/constants";
 import extractTokenFromHeader from "src/utils/extractTokenFromHeader";
 

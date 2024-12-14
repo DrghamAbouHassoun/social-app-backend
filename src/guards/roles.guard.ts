@@ -1,11 +1,10 @@
+/* eslint-disable prettier/prettier */
 import { CanActivate, ExecutionContext, HttpException, Injectable } from "@nestjs/common";
 import { Reflector } from "@nestjs/core";
 import { JwtService } from "@nestjs/jwt";
 import { Request } from "express";
-import { Observable } from "rxjs";
 import globalConstants from "src/config/constants";
 import { ROLES_KEY } from "src/decorators/roles.decorator";
-import { Role } from "src/enums/role.enum";
 import extractTokenFromHeader from "src/utils/extractTokenFromHeader";
 
 
